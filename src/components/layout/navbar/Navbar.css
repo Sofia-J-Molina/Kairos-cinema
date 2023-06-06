@@ -1,0 +1,16 @@
+ol {
+  list-style: none;
+  display: flex;
+}
+li {
+  margin-inline: 20px;
+  display: inline-flex;
+}
+.Nav {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: #080808;
+  color: #ffffff;
+  font-size: 25px;
+}
