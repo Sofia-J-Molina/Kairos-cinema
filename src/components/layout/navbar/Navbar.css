@@ -6,6 +6,10 @@ li {
   margin-inline: 20px;
   display: inline-flex;
 }
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
 .Nav {
   padding: 15px;
   display: flex;
