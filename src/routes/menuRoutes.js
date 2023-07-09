@@ -1,7 +1,7 @@
-import { ItemListContainer } from "../components/pages/ItemListContainer/ItemListContainer";
-import { ProductDetailContainer } from "../components/pages/productDetail/ProductDetailContainer";
-import { CartContainer } from "../components/pages/cart/CartContainer";
 import { Form } from "../components/pages/form/Form";
+import { CartContainer } from "../components/pages/cart/CartContainer";
+import { ProductDetailContainer } from "../components/pages/productDetail/ProductDetailContainer";
+import { ItemListContainer } from "../components/pages/ItemListContainer/ItemListContainer";
 
 export const menuRoutes = [
   {

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { ItemListPresentacional } from "./ItemListPresentacional";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router";
+
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+
   const { categoryName } = useParams();
   useEffect(() => {
     let productosFiltrados = products.filter(

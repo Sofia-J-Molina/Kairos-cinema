@@ -10,6 +10,10 @@ export const Form = () => {
   });
   const handleSubmit = (evento) => {
     evento.preventDefault();
+    if (userData.name.length < 3) {
+      console.log("El nombre no puede ser menor a 3");
+      return;
+    }
     let data = {
       nombreUsuario: userData.name,
       apellidoUsuario: userData.lastName,
@@ -17,7 +21,6 @@ export const Form = () => {
     console.log(data);
   };
   const handleChange = (evento) => {
-    console.log(evento.target.name);
     setUserData({ ...userData, [evento.target.name]: evento.target.value });
   };
 
@@ -37,7 +40,7 @@ export const Form = () => {
           name="lastName"
           onChange={handleChange}
         />
-        <button>Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

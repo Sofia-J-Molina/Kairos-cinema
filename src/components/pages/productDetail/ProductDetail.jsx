@@ -1,12 +1,12 @@
-import { ItemCount } from "../../ItemCount";
+import { ItemCount } from "../../common/ItemCount";
 
-export const ProductDetail = ({ productSelected }) => {
+export const ProductDetail = ({ productSelected, addToCart, cantidad }) => {
   const onAdd = (cantidad) => {
     let data = {
       ...productSelected,
       quantity: cantidad,
     };
-    console.log(data);
+    addToCart(data);
   };
   return (
     <>
@@ -16,7 +16,11 @@ export const ProductDetail = ({ productSelected }) => {
         <p>{productSelected.description}</p>
       </div>
       {productSelected.stock > 0 ? (
-        <ItemCount stock={productSelected.stock} initial={1} onAdd={onAdd} />
+        <ItemCount
+          stock={productSelected.stock}
+          initial={cantidad}
+          onAdd={onAdd}
+        />
       ) : (
         <h3>No hay stock</h3>
       )}
