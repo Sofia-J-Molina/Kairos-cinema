@@ -3,7 +3,11 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import {} from "../navbar/Navbar.css";
 import { Link } from "react-router-dom";
 import { menuNavigate } from "../../../routes/menuNavigate";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 export const Navbar = () => {
+  const { getTotalItems } = useContext(CartContext);
+  let totalItems = getTotalItems();
   return (
     <>
       <div className="Nav">
@@ -18,7 +22,7 @@ export const Navbar = () => {
         </ul>
 
         <Link to="/carrito">
-          <Badge badgeContent={2} color="primary">
+          <Badge badgeContent={totalItems} showZero color="primary">
             <BsFillCartCheckFill color="Orange" size="20px" />
           </Badge>
         </Link>
