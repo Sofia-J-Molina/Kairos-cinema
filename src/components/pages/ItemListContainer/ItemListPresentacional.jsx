@@ -1,5 +1,5 @@
 import { ProductCard } from "../../common/productCard/ProductCard";
-import "./itemListContainer.css";
+import "./ItemListContainer.css";
 export const ItemListPresentacional = ({ items }) => {
   return (
     <div className="cards-container">
