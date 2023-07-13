@@ -49,8 +49,8 @@ const CartContextProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(newArray));
   };
   const getTotalQuantityById = (id) => {
-    let producto = cart.find((prod) => prod.id === +id);
-    console.log(producto?.quantity);
+    let producto = cart.find((prod) => prod.id === id);
+
     return producto?.quantity;
   };
   const getTotalItems = () => {

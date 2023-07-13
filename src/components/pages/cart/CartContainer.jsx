@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
-
+import Cart from "./Cart";
 export const CartContainer = () => {
   const { cart, clearCart, removeById, getTotalPrice } =
     useContext(CartContext);
@@ -24,18 +24,12 @@ export const CartContainer = () => {
   };
   return (
     <div>
-      <h2>El total del carrito es: {total}</h2>
-      {cart.length > 0 && <button onClick={limpiar}>Limpiar carrito</button>}
-      {cart.map((product) => {
-        return (
-          <div key={product.id}>
-            <h2>{product.title}</h2>
-            <h3>{product.price}</h3>
-            <h3>{product.quantity}</h3>
-            <button onClick={() => removeById(product.id)}>Eliminar</button>
-          </div>
-        );
-      })}
+      <Cart
+        total={total}
+        limpiar={limpiar}
+        cart={cart}
+        removeById={removeById}
+      />
     </div>
   );
 };

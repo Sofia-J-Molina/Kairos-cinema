@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { ProductDetail } from "./ProductDetail";
-import { products } from "../../../productsMock";
+
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import { CircleLoader } from "react-spinners";
 import Swal from "sweetalert2";
+import { dataBase } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 const objetoLoader = {
   display: "block",
   margin: "0 auto",
@@ -33,16 +35,11 @@ export const ProductDetailContainer = () => {
   };
 
   useEffect(() => {
-    let productFind = products.find((product) => product.id === +id);
-
-    const getProduct = new Promise((res) => {
-      setTimeout(() => {
-        res(productFind);
-      }, 2000);
+    let itemCollection = collection(dataBase, "products");
+    let refDoc = doc(itemCollection, id);
+    getDoc(refDoc).then((res) => {
+      setProductSelect({ ...res.data(), id: res.id });
     });
-    getProduct
-      .then((res) => setProductSelect(res))
-      .catch((err) => console.log(err));
   }, [id]);
 
   return (

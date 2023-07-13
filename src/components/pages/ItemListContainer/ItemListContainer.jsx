@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { ItemListPresentacional } from "./ItemListPresentacional";
-import { products } from "../../../productsMock";
+
 import { useParams } from "react-router";
 import { CircleLoader } from "react-spinners";
+import { dataBase } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const objetoLoader = {
   display: "block",
@@ -11,23 +13,31 @@ const objetoLoader = {
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-
   const { categoryName } = useParams();
+
   useEffect(() => {
-    let productosFiltrados = products.filter(
-      (product) => product.category === categoryName
-    );
-    const tarea = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(categoryName ? productosFiltrados : products);
-      }, 2000);
-    });
-    tarea
-      .then((respuesta) => setItems(respuesta))
-      .catch((rechazo) => {
-        console.log(rechazo);
-      });
+    let itemsCollection = collection(dataBase, "products");
+
+    let consulta;
+
+    if (!categoryName) {
+      consulta = itemsCollection;
+    } else {
+      consulta = query(itemsCollection, where("category", "==", categoryName));
+    }
+    getDocs(consulta)
+      .then((res) => {
+        let products = res.docs.map((elemento) => {
+          return {
+            id: elemento.id,
+            ...elemento.data(),
+          };
+        });
+        setItems(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
+
   //if con return temprano
   /*
   if (items.length === 0) {

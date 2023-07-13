@@ -54,6 +54,7 @@ export const products = [
     category: "Suspenso",
     año: 2019,
   },
+
   {
     id: 6,
     title: "Sharkboy y Lavagirl",
@@ -65,6 +66,7 @@ export const products = [
     category: "Fantasía",
     año: 2005,
   },
+
   {
     id: 7,
     title: "La cumbre escarlata",
@@ -76,6 +78,7 @@ export const products = [
     category: "Suspenso",
     año: 2015,
   },
+
   {
     id: 8,
     title: "Drácula",
@@ -120,6 +123,7 @@ export const products = [
     category: "Comedia",
     año: 2011,
   },
+
   {
     id: 12,
     title: "La sirenita",
