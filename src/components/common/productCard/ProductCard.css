@@ -1,0 +1,45 @@
+.card {
+  width: 350px;
+  height: auto;
+  overflow: hidden;
+  transition: 2ms;
+  margin: 0px;
+  padding: 0px;
+}
+.Title {
+  color: #000000;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px 5px #ffffff51;
+}
+.CardMedia {
+  object-fit: cover;
+  object-position: center;
+  align-items: center;
+  margin: auto;
+  width: 350px;
+  height: 500px;
+}
+.cardContent {
+  background-color: #b8b8b861;
+  color: #ffffff;
+  text-align: center;
+  object-position: center;
+  width: 350px;
+  padding: 0px;
+  font-family: "Anton", sans-serif;
+  border-bottom-style: inset;
+}
+.card_actions {
+  background-color: #ffffff40;
+  height: auto;
+  color: #ffffff;
+  border: solid 2px #ffffff;
+  margin-inline-start: 90px;
+}
+.Verdetalle {
+  color: #ffffff;
+  background-color: #ff4e00;
+  border: 2px dashed;
+}

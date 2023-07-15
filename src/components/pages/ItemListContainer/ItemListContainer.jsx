@@ -46,13 +46,22 @@ export const ItemListContainer = () => {
   */
 
   return (
-    <div>
+    <div className="contained">
       {
         /*ternario*/
         items.length > 0 ? (
           <ItemListPresentacional items={items} />
         ) : (
-          <h1>
+          <h1
+            style={{
+              fontSize: "30px",
+              objectPosition: "center",
+              justifyContent: "center",
+              marginInline: "80vh",
+              marginBlock: "25px",
+            }}
+          >
+            Cargando...
             <CircleLoader
               cssOverride={objetoLoader}
               size={150}

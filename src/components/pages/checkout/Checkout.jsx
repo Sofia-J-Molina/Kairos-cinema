@@ -1,5 +1,5 @@
 import { Button, TextField } from "@mui/material";
-
+import "./Checkout.css";
 export const Checkout = ({ handleSubmit, handleChange, errors }) => {
   return (
     <div>

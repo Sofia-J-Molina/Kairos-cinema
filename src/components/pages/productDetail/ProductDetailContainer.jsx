@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { ProductDetail } from "./ProductDetail";
-
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import { CircleLoader } from "react-spinners";

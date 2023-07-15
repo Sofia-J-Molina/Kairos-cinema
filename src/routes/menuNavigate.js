@@ -1,10 +1,5 @@
 export const menuNavigate = [
   {
-    id: "todas",
-    path: "/",
-    title: "Todas",
-  },
-  {
     id: "fantasia",
     path: "/category/Fantasía",
     title: "Fantasía",
@@ -38,10 +33,5 @@ export const menuNavigate = [
     id: "Drama",
     path: "/category/Drama",
     title: "Drama",
-  },
-  {
-    id: "Form",
-    path: "/Form",
-    title: "Ingresar",
   },
 ];

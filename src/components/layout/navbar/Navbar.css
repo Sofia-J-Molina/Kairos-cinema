@@ -1,20 +1,75 @@
-ol {
-  list-style: none;
-  display: flex;
+.navbar {
+  background-color: #000000;
+  padding: 5px;
 }
-li {
-  margin-inline: 20px;
-  display: inline-flex;
-}
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-.Nav {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  background-color: #080808;
+
+.menu {
+  width: 100%;
   color: #ffffff;
   font-size: 25px;
+}
+.inicio {
+  text-decoration: none;
+  color: #ffffff;
+  margin-inline-start: 25vh;
+  padding-top: 16px;
+}
+.menu li {
+  display: inline-block;
+}
+
+.menu li a {
+  display: block;
+  padding: 5px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown {
+  margin-right: 50px;
+  margin-left: 60px;
+  border-bottom-style: solid;
+}
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0;
+}
+.dropdown-menu :hover {
+  background-color: #ff4e00;
+  border: 2px solid #333;
+}
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/*otras cosillas*/
+.carrito {
+  margin-inline: 5vh;
+}
+.carrito_svg {
+  margin-inline-start: 60vh;
+  border-radius: 70px;
+  width: 60px;
+  height: 40px;
+  text-align: end;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+  color: #ff4e00;
+  border-radius: 40px;
+}
+.carrito_svg:hover {
+  box-shadow: 0px 0px 10px 5px #ff4e00;
+}
+.itemcount_color {
+  margin: 3px;
+  color: #ffffff;
 }

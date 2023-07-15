@@ -4,37 +4,34 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
   Typography,
 } from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
-
+import "./ProductCard.css";
 export const ProductCard = ({ elemento }) => {
   return (
-    <Card sx={{ width: 300 }}>
+    <Card className="card">
       <CardMedia
-        sx={{ height: 300 }}
         image={elemento.img}
         title={elemento.title}
+        className="CardMedia"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent className="cardContent">
+        <Typography variant="h5" component="div" className="Title">
           {elemento.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {elemento.description}
-        </Typography>
-        <Typography variant="subtitle1" textAlign={"center"}>
-          ${elemento.price}.
+        <Typography variant="h6" textAlign={"center"} className="Title">
+          Precio: $ {elemento.price}.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button variant="contained">Agregar al carrito</Button>
-        <Link to={`/itemDetail/${elemento.id}`}>
-          <Button
-            variant="contained"
-            size="small"
-            sx={{ textTransform: "none" }}
-          >
+      <CardActions className="card_actions">
+        <IconButton aria-label="add to shopping cart">
+          <AddShoppingCartIcon />
+        </IconButton>
+        <Link to={`/itemDetail/${elemento.id}`} className="Verdetalle">
+          <Button size="medium" sx={{ textTransform: "none", color: "white" }}>
             Ver detalle
           </Button>
         </Link>

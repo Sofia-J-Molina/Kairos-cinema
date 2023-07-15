@@ -15,7 +15,7 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                   <h2>${item.price}.-</h2>
                   <h2>Unidades: {item.quantity}</h2>
                 </div>
-                <Button variant="contained" onClick={() => removeById(item.id)}>
+                <Button variant="outlined" onClick={() => removeById(item.id)}>
                   Quitar
                 </Button>
               </div>
@@ -23,18 +23,20 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
           })}
         </div>
         <div className="cart-info">
-          <h2>Descripcion del carrito:</h2>
+          <h2>Descripcion del carrito: </h2>
           <h3>Cantidad de productos: </h3>
           <h3>Precio total: {total}</h3>
-          <h3>Descuento: </h3>
-          <h3>Precio final: </h3>
+          <h3>Descuento: No se encontraron descuentos disponibles</h3>
+          <h3>Precio final: {total} </h3>
           {cart.length > 0 ? (
             <div className="btn-cart">
-              <Button onClick={limpiar} variant="contained">
+              <Button onClick={limpiar} variant="outlined">
                 Vaciar carrito
               </Button>
               <Link to="/checkout">
-                <Button variant="contained">Finalizar compra</Button>
+                <Button variant="contained" size="medium">
+                  Finalizar compra
+                </Button>
               </Link>
             </div>
           ) : (
@@ -43,7 +45,7 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
             </Link>
           )}
 
-          <h1>El total del carrito es ${total}</h1>
+          <h1>El total del carrito es $ {total}</h1>
         </div>
       </div>
     </div>

@@ -1,8 +1,14 @@
 .Footer {
   padding: 15px;
   display: flex;
-  justify-content: center;
+  margin: auto;
+  object-position: center;
   background-color: #080808;
   color: #ffffff;
-  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.Footer p {
+  font-size: 22px;
+  display: flow-root;
 }

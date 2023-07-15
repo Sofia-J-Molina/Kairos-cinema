@@ -1,6 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -17,4 +21,8 @@ const auth = getAuth(app);
 
 export const login = async ({ email, password }) => {
   return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const register = async ({ email, password }) => {
+  return await createUserWithEmailAndPassword(auth, email, password);
 };

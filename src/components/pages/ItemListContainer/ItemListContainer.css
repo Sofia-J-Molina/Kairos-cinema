@@ -9,3 +9,44 @@
   background-color: black;
   min-height: 100vh;
 }
+.contained {
+  min-height: 100vh;
+}
+.Logo {
+  margin-top: 10px;
+  margin-inline: 20px;
+  border-radius: 60px;
+  margin: 20px;
+}
+.Logo:hover {
+  box-shadow: 0px 0px 20px 5px #000000d0;
+}
+.kairos {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff1e05;
+  width: 80vh;
+}
+.kairos-cinema {
+  background: blanchedalmond;
+  padding-inline: 20vh;
+  text-align: center;
+  object-position: center;
+  font-size: 24px;
+}
+.kairos h1 {
+  width: 100%;
+
+  margin: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex-direction: column;
+  align-items: center;
+}
+.kairos p {
+  width: 100%;
+  padding-inline: 20vh;
+  margin: 60px;
+}

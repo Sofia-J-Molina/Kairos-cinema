@@ -10,22 +10,34 @@ export const Navbar = () => {
   let totalItems = getTotalItems();
   return (
     <>
-      <div className="Nav">
-        <h4>logo</h4>
-        <Link to="/">Inicio</Link>
-        <ul className="nav02">
-          {menuNavigate.map(({ id, path, title }) => (
-            <Link key={id} to={path}>
-              {title}
+      <div className="navbar">
+        <ol className="menu">
+          <Link to="/" className="inicio">
+            Inicio
+          </Link>
+          <li className="dropdown">
+            Categorias 🡣
+            <ul className="dropdown-menu">
+              {menuNavigate.map(({ id, path, title }) => (
+                <Link key={id} to={path}>
+                  {title}
+                </Link>
+              ))}
+            </ul>
+          </li>
+          <li>
+            <Link to="/carrito" className="carrito">
+              <Badge
+                badgeContent={totalItems}
+                showZero
+                className="itemcount_color"
+                color="primary"
+              >
+                <BsFillCartCheckFill size="25px" className="carrito_svg" />
+              </Badge>
             </Link>
-          ))}
-        </ul>
-
-        <Link to="/carrito">
-          <Badge badgeContent={totalItems} showZero color="primary">
-            <BsFillCartCheckFill color="Orange" size="20px" />
-          </Badge>
-        </Link>
+          </li>
+        </ol>
       </div>
     </>
   );

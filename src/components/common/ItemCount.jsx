@@ -6,11 +6,20 @@ export const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
   return (
     <>
-      <div className="count--container">
+      <div
+        style={{
+          marginBottom: "20px",
+          display: "flex",
+          gap: "30px",
+          backgroundColor: "white",
+          padding: "20px",
+        }}
+      >
+        <h2 style={{ textAlign: "center", margin: "5px" }}>Stock: {stock}</h2>
         <Button variant="contained" onClick={decrement}>
           -
         </Button>
-        <h2>{count}</h2>
+        <h2 style={{ color: "black" }}>{count}</h2>
         <Button variant="contained" onClick={increment}>
           +
         </Button>

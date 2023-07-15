@@ -1,0 +1,23 @@
+.Compra-exitosa {
+  height: 80vh;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #ffba94;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.Caja_texto {
+  margin-block: 25vh;
+  background-color: #f2f2f2;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  box-shadow: 0px 2px 15px 0px #000000;
+}
+.texto {
+  font-size: 25px;
+  color: #333;
+}
